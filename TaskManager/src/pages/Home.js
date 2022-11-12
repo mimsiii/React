@@ -214,7 +214,7 @@ function Home() {
                                 value={state.newTask.priority}
                                 required
                             >
-                                <option value="" selected hidden>Select...</option>
+                                <option value="" hidden>Select...</option>
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
                                 <option value="high">High</option>
@@ -254,7 +254,7 @@ function Home() {
                 </ul>
                 <ul className="list">
                     {getTasks().map((task, i) => 
-                        <li>
+                        <li key={i}>
                             <div className="row">
                                 <div>
                                     <input type="checkbox" checked={task.completed} onChange={e => {

@@ -152,7 +152,7 @@ function Home() {
                 </ul>
                 <ul className="list">
                     {getTasks().map((task, i) => 
-                        <li>
+                        <li key={i}>
                             <div className="row">
                                 <div>
                                     <input type="checkbox" checked={task.completed} onChange={e => {
