@@ -14,12 +14,9 @@ function Home() {
         const storedValues = localStorage.getItem("form");
         if (!storedValues)
           return {
-            name: '',
-            description: '',
-            endDate: '',
-            priority: '',
-            completed: false,
-            visibleDescription: false
+            tasks:[],
+            editMode: false,
+            activeTabId: 0
           };
         return JSON.parse(storedValues);
     };

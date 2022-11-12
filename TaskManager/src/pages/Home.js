@@ -16,13 +16,11 @@ function Home() {
         const storedValues = localStorage.getItem("form");
         if (!storedValues)
           return {
-            name: '',
-            description: '',
-            endDate: '',
-            priority: '',
-            completed: false,
-            visibleDescription: false
-          };
+            tasks:[],
+            newTask,
+            editMode: false,
+            activeTabId: 0
+          };   
         return JSON.parse(storedValues);
     };
 
@@ -207,7 +205,7 @@ function Home() {
                         />  
                     </div>  
                     <div className="row">
-                        <label className="prioritylabel"for="priority">Priority:</label>
+                        <label className="prioritylabel">Priority:</label>
                         <div className="selectoptions">
                             <select 
                                 id="priority"
